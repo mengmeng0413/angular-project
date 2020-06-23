@@ -4,20 +4,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeroComponent } from './hero/hero.component';
-import {MatButtonModule} from "@angular/material/button";
+import { MatButtonModule } from "@angular/material/button";
 import { RouteTestComponent } from './route-test/route-test.component';
 import { RouterModule } from "@angular/router";
-import {HighLightDirective} from './highlight.directive';
+import { HighLightDirective } from './highlight.directive';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
 import { DialogComponent } from './route-test/component/dialog/dialog.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatDialogModule} from "@angular/material/dialog";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatDialogModule } from "@angular/material/dialog";
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -44,6 +45,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatButtonModule,
     RouterModule,
     MatFormFieldModule,
+    MatInputModule,
     MatDialogModule,
     // MatButtonModule,
     // MatCheckboxModule

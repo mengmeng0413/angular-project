@@ -19,4 +19,8 @@ export class TodoComponent implements OnInit {
     this.todoList.todos.push(newTodo)
     console.log('结果：',this.todoList.todos)
   }
+
+  goBack1() {
+    history.back()
+  }
 }

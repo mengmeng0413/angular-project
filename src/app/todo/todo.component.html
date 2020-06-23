@@ -1,6 +1,5 @@
-
-  <app-create-todo (create)="add($event)"></app-create-todo>
-
+<button color="primary" (click)="goBack1()">goBack</button>
+<div class="host-wrapper">
+  <app-create-todo class="creat" (create)="add($event)"></app-create-todo>
   <app-todo-list #todoList></app-todo-list>
-
-
+</div>

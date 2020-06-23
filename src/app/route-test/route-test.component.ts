@@ -72,4 +72,8 @@ export class RouteTestComponent implements OnInit, OnDestroy {
       this.animal = result;
     });
   }
+
+  goBack() {
+    history.back()
+  }
 }
