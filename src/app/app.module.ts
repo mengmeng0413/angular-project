@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
@@ -15,6 +15,9 @@ import { RouterModule } from "@angular/router";
 import {HighLightDirective} from './highlight.directive';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
+import { DialogComponent } from './route-test/component/dialog/dialog.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDialogModule} from "@angular/material/dialog";
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -26,11 +29,13 @@ import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
     RouteTestComponent,
     HighLightDirective,
     ExponentialStrengthPipe,
-    FlyingHeroesPipe
+    FlyingHeroesPipe,
+    DialogComponent
   ],
   imports: [
     BrowserModule, // 提供了运行在浏览器中所需要的关键服务(Service)和指令（Directive)
     FormsModule, // 提供了表单处理和双向数据绑定等服务和指令
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
@@ -38,6 +43,8 @@ import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
     MatSlideToggleModule,
     MatButtonModule,
     RouterModule,
+    MatFormFieldModule,
+    MatDialogModule,
     // MatButtonModule,
     // MatCheckboxModule
   ],

@@ -66,6 +66,18 @@
 </div>
 <div class="wrapper-box">
   <h4>7)弹窗</h4>
-  <button (click)="showDialog()">show 弹窗</button>
+  <ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="name" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ol>
 </div>
 

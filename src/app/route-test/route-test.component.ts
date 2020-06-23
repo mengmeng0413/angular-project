@@ -1,5 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HEROES} from "../heroes";
+import { MatDialog } from '@angular/material/dialog';
+import {DialogComponent} from "./component/dialog/dialog.component";
 
 @Component({
   selector: 'app-route-test',
@@ -18,7 +20,11 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   heroes: any[] = [];
   canFly = true;
   mutate = true;
-  constructor() {
+  animal: string;
+  name: string;
+  constructor(
+    public dialog: MatDialog
+  ) {
     this.reset();
   }
   ngOnInit(): void {
@@ -55,7 +61,15 @@ export class RouteTestComponent implements OnInit, OnDestroy {
     this.value = value;
   }
 
-  showDialog() {
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 }
