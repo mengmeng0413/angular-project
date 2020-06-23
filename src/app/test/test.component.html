@@ -1,0 +1,50 @@
+<div>
+  <h4>1）ngfor & ngIf & 插值 & 事件绑定：</h4>
+  <div class="inner-div" *ngFor="let item of allData">
+    <span class="all-data" *ngIf="item.num >= 5" (click)="chooseSpan(item)">{{item.key}}：{{item.value}}</span>
+  </div>
+</div>
+
+
+<div>
+  <h4>2）双向数据绑定：</h4>
+  <div class="inner-div">
+    <input [(ngModel)]="input_value"/>
+    <span>{{input_value}}</span>
+  </div>
+</div>
+
+<div>
+  <h4>3）属性绑定语法：</h4>
+  <div [innerHTML]="bind" [title]="bindDesc" class="inner-div bind"></div>
+</div>
+
+<div>
+  <h4>4）组件间传值：</h4>
+  <div class="inner-div">
+    <app-hero [receive]=data_forHero (childOuter)="getData($event)" #hero></app-hero>
+  </div>
+  <button mat-raised-button color="accent" (click)="getHeroval()">获取hero组件中的值</button>
+</div>
+
+<div>
+  <h4>5）UI：</h4>
+  <div class="inner-div">
+   <mat-radio-group>
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+    <mat-slide-toggle>Slide me!</mat-slide-toggle>
+  </div>
+</div>
+
+<div>
+  <h4>6）路由跳转：</h4>
+  <div class="inner-div">
+    <a class="only" (click)="goRouteTest()">点我跳转到route-test</a><br>
+    <a class="only" (click)="routeTo('hero')">点我跳转到hero</a><br>
+    <a class="only" routerLink="/todo">点我跳转到todo</a>
+  </div>
+</div>
+

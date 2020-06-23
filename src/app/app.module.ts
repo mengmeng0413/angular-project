@@ -1,18 +1,51 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TestComponent } from './test/test.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HeroComponent } from './hero/hero.component';
+import {MatButtonModule} from "@angular/material/button";
+import { RouteTestComponent } from './route-test/route-test.component';
+import { RouterModule } from "@angular/router";
+import {HighLightDirective} from './highlight.directive';
+import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
+import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
+
+// import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TestComponent,
+    HeroComponent,
+    RouteTestComponent,
+    HighLightDirective,
+    ExponentialStrengthPipe,
+    FlyingHeroesPipe
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule, // 提供了运行在浏览器中所需要的关键服务(Service)和指令（Directive)
+    FormsModule, // 提供了表单处理和双向数据绑定等服务和指令
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    RouterModule,
+    // MatButtonModule,
+    // MatCheckboxModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [
+    // MatButtonModule,
+    // MatCheckboxModule
+  ],
+  providers: [],  // 列出会在此模块中“注入”的服务（Service）
+  bootstrap: [AppComponent] // 指明哪个组件为引导性组件
 })
 export class AppModule { }

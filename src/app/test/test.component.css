@@ -1,0 +1,36 @@
+.all-data {
+  display: inline-block;
+  width: 200px;
+  border: 1px lightpink solid;
+  border-radius: 3px;
+  margin: 3px;
+  padding: 3px;
+  background-color: lemonchiffon;
+  color: slateblue;
+}
+.inner-div {
+  margin: 5px;
+}
+.bind{
+  padding: 0 15px;
+  font-size: 15px;
+  color: cornflowerblue;
+}
+.only{
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+}
+.only:link{
+  text-decoration: none;
+}
+.only:active{
+  text-decoration: none;
+}
+.only:visited{
+  text-decoration: none;
+}
+.only:hover{
+  color: slateblue;
+  text-decoration: none;
+}
