@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute } from "@angular/router";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-test',
@@ -29,34 +29,37 @@ export class TestComponent implements OnInit {
     value: 'data4'
   }];
   @ViewChild('hero') hero;
+  
   constructor(
-    private router : Router,
-    private route : ActivatedRoute
-  ) { }
-
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+  }
+  
   ngOnInit(): void {
   }
-
-  chooseSpan(item){
+  
+  chooseSpan(item) {
     console.log('item---', item);
   }
-
-  getData(msg:string){
-    alert('子组件穿过来的数据：'+ msg)
+  
+  getData(msg: string) {
+    alert('子组件穿过来的数据：' + msg);
   }
-
-  getHeroval(){
-    this.hero.unuseMethod()
-    console.log(this.hero.str)
+  
+  getHeroval() {
+    this.hero.unuseMethod();
+    console.log(this.hero.str);
   }
-
-  goRouteTest(){
-    this.router.navigateByUrl("routeTest").then(r => {})
+  
+  goRouteTest() {
+    this.router.navigateByUrl('routeTest').then(r => {
+    });
   }
-
+  
   routeTo(url: string) {
     this.router.navigate([url]).then(r => {
-      console.log('123')
-    })
+      console.log('123');
+    });
   }
 }

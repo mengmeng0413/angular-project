@@ -1,84 +1,97 @@
-<button mat-fab color="primary" (click)="goBack()">goBack</button>
 <div class="wrapper-box">
   <h4>1）event获取input内容</h4>
-  <input (keyup)="onKey($event)">
-  <button (click)="onClickMe()">clear</button>
-  <p>{{values}}</p>
+  <div class="inner-box">
+    <input (keyup)="onKey($event)">
+    <button (click)="onClickMe()">clear</button>
+    <p>{{values}}</p>
+  </div>
+
 </div>
 <div class="wrapper-box">
   <h4>2）属性型指令</h4>
-  <input
-    #box
-    (keyup.enter)="update(box.value)"
-    (blur)="update(box.value)">
-  <span>点击enter/失去焦点</span>
-  <div>
-    <input type="radio" name="colors" (click)="color='lightgreen'"/>绿
-    <input type="radio" name="colors" (click)="color='lightblue'"/>蓝
-    <input type="radio" name="colors" (click)="color='lightpink'"/>粉
+  <div class="inner-box">
+    <input
+      #box
+      (keyup.enter)="update(box.value)"
+      (blur)="update(box.value)">
+    <span>点击enter/失去焦点</span>
+    <div>
+      <input type="radio" name="colors" (click)="color='lightgreen'"/>绿
+      <input type="radio" name="colors" (click)="color='lightblue'"/>蓝
+      <input type="radio" name="colors" (click)="color='lightpink'"/>粉
+    </div>
+    <p [appHighLight]="color">{{value}}</p>
+    <p [appHighLight]="color" defaultColor="violet">1234567</p>
   </div>
-  <p [appHighLight]="color">{{value}}</p>
-  <p [appHighLight]="color" defaultColor="violet">1234567</p>
 </div>
 <div class="wrapper-box">
   <h4>3）ngSwitch</h4>
-  <select [(ngModel)]="selectVal">
-    <option value="1">赵
-    <option value="2">钱
-    <option value="3">孙
-    <option value="4">李
-  </select>
-  <div [ngSwitch]="selectVal">
-    <span *ngSwitchCase="1">zhao</span>
-    <span *ngSwitchCase="2">qian</span>
-    <span *ngSwitchCase="3">sun</span>
-    <span *ngSwitchCase="4">li</span>
+  <div class="inner-box">
+    <select [(ngModel)]="selectVal">
+      <option value="1">赵
+      <option value="2">钱
+      <option value="3">孙
+      <option value="4">李
+    </select>
+    <div [ngSwitch]="selectVal">
+      <span *ngSwitchCase="1">zhao</span>
+      <span *ngSwitchCase="2">qian</span>
+      <span *ngSwitchCase="3">sun</span>
+      <span *ngSwitchCase="4">li</span>
+    </div>
   </div>
 </div>
 <div class="wrapper-box">
   <h4>4）管道</h4>
-  <p>my birthday is {{ birthday | date: format | uppercase }}</p>
-  <button (click)="toggleFormat()">Toggle Format</button>
-  <p>2的5次方：{{2 | exponentialStrength:5}}</p>
+  <div class="inner-box">
+    <p>my birthday is {{ birthday | date: format | uppercase }}</p>
+    <button class="my-btn" (click)="toggleFormat()">Toggle Format</button>
+    <p>2的5次方：{{2 | exponentialStrength:5}}</p>
+  </div>
 </div>
 <div class="wrapper-box">
   <h4>5）管道练习</h4>
-  <div>Normal power: <input [(ngModel)]="power"></div>
-  <div>Boost factor: <input [(ngModel)]="factor"></div>
-  <p>
-    Super Hero Power:{{ power | exponentialStrength: factor}}
-  </p>
+  <div class="inner-box">
+    <div>Normal power: <input [(ngModel)]="power"></div>
+    <div>Boost factor: <input [(ngModel)]="factor"></div>
+    <p>
+      Super Hero Power:{{ power | exponentialStrength: factor}}
+    </p>
+  </div>
 </div>
 <div class="wrapper-box">
   <h4>6)管道与变更检测</h4>
-  <p>
-    New hero:
-    <input type="text" #input_text
-          (keyup.enter)="addHero(input_text.value); input_text.value=''"
-          placeholder="hero name">
-    <input id="can-fly" type="checkbox" [(ngModel)]="canFly">can fly
-  </p>
-  <p>
-    <input id="mutate" type="checkbox" [(ngModel)]="mutate">Mutate array
-    <button (click)="reset()">Reset</button>
-  </p>
-<!--  <div *ngFor="let hero of heroes"> {{hero.name}} </div>-->
-  <div *ngFor="let hero of (heroes | flyingHeroes)"> {{hero.name}} </div>
+  <div class="inner-box">
+    <p>
+      New hero:
+      <input type="text" #input_text
+             (keyup.enter)="addHero(input_text.value); input_text.value=''"
+             placeholder="hero name">
+      <input id="can-fly" type="checkbox" [(ngModel)]="canFly">can fly
+    </p>
+    <p>
+      <input id="mutate" type="checkbox" [(ngModel)]="mutate">Mutate array
+      <button (click)="reset()">Reset</button>
+    </p>
+    <!--  <div *ngFor="let hero of heroes"> {{hero.name}} </div>-->
+    <div *ngFor="let hero of (heroes | flyingHeroes)"> {{hero.name}} </div>
+  </div>
 </div>
 <div class="wrapper-box">
   <h4>7)弹窗</h4>
-  <ol>
-    <li>
-      <mat-form-field>
-        <input matInput [(ngModel)]="name" placeholder="What's your name?">
-      </mat-form-field>
-    </li>
-    <li>
-      <button mat-raised-button (click)="openDialog()">Pick one</button>
-    </li>
-    <li *ngIf="animal">
-      You chose: <i>{{animal}}</i>
-    </li>
-  </ol>
+  <div class="inner-box">
+    <ol>
+      <li>
+        <mat-form-field>
+          <input matInput [(ngModel)]="name" placeholder="What's your name?">
+        </mat-form-field>
+      </li>
+      <li>
+        <button mat-raised-button (click)="openDialog()">Pick one</button>
+      </li>
+      <li *ngIf="animal">
+        You chose: <i>{{animal}}</i>
+      </li>
+    </ol>
+  </div>
 </div>
-

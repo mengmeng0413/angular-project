@@ -1,9 +1,9 @@
-import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {RouterModule, Routes} from "@angular/router";
-import {TodoComponent} from "./todo.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
+import {TodoComponent} from './todo.component';
 
-const todoRoutes: Routes = [{path: '', component: TodoComponent}]
+const todoRoutes: Routes = [{path: '', component: TodoComponent}];
 
 @NgModule({
   declarations: [],
@@ -12,4 +12,5 @@ const todoRoutes: Routes = [{path: '', component: TodoComponent}]
   providers: [],
 })
 
-export class TodoRoutingModule {}
+export class TodoRoutingModule {
+}

@@ -1,3 +1,19 @@
 .wrapper-box{
-  margin: 10px;
+    margin: 10px;
+}
+h4{
+    color: #21243d;
+    padding: 5px;
+}
+.inner-box{
+    text-indent: 2rem;
+}
+p{
+    padding: 5px 0;
+}
+input{
+    margin: 5px 0;
+}
+.my-btn{
+    margin-left: 30px;
 }

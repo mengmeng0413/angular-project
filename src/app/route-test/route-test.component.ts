@@ -6,7 +6,8 @@ import {DialogComponent} from "./component/dialog/dialog.component";
 @Component({
   selector: 'app-route-test',
   templateUrl: './route-test.component.html',
-  styleUrls: ['./route-test.component.css']
+  styleUrls: ['./route-test.component.css'],
+   providers: [],
 })
 export class RouteTestComponent implements OnInit, OnDestroy {
   values = '';
@@ -71,9 +72,5 @@ export class RouteTestComponent implements OnInit, OnDestroy {
       console.log('The dialog was closed');
       this.animal = result;
     });
-  }
-
-  goBack() {
-    history.back()
   }
 }

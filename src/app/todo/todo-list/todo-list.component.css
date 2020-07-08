@@ -1,0 +1,39 @@
+:host {
+    margin: 20px;
+}
+
+button {
+    padding: 5px;
+    border-radius: 2px;
+    background: cornflowerblue;
+    cursor: pointer;
+    margin-bottom: 28px;
+}
+
+table {
+    width: 500px;
+    background: beige;
+    border: 2px solid #000;
+    border-spacing: initial;
+}
+
+thead {
+    background: rgba(0, 0, 0, .3)
+}
+
+tbody tr td {
+    text-align: center;
+    cursor: pointer;
+}
+
+th, td {
+    padding: 10px;
+}
+
+a {
+    color: red;
+}
+
+.even {
+    background: lightgrey;
+}

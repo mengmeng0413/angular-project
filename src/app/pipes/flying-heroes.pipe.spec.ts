@@ -1,4 +1,4 @@
-import { FlyingHeroesPipe } from './flying-heroes.pipe';
+import {FlyingHeroesPipe} from './flying-heroes.pipe';
 
 describe('FlyingHeroesPipe', () => {
   it('create an instance', () => {

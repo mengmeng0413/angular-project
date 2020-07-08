@@ -19,6 +19,8 @@ import { DialogComponent } from './route-test/component/dialog/dialog.component'
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { HomeComponent } from './home/home.component';
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -31,7 +33,8 @@ import { MatDialogModule } from "@angular/material/dialog";
     HighLightDirective,
     ExponentialStrengthPipe,
     FlyingHeroesPipe,
-    DialogComponent
+    DialogComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, // 提供了运行在浏览器中所需要的关键服务(Service)和指令（Directive)
@@ -47,6 +50,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatDatepickerModule,
     // MatButtonModule,
     // MatCheckboxModule
   ],
