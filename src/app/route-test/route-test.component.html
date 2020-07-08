@@ -33,7 +33,7 @@
       <option value="3">孙
       <option value="4">李
     </select>
-    <div [ngSwitch]="selectVal">
+    <div [ngSwitch]="selectVal" style="display: inline-block">
       <span *ngSwitchCase="1">zhao</span>
       <span *ngSwitchCase="2">qian</span>
       <span *ngSwitchCase="3">sun</span>
@@ -60,7 +60,7 @@
   </div>
 </div>
 <div class="wrapper-box">
-  <h4>6)管道与变更检测</h4>
+  <h4>6）管道与变更检测</h4>
   <div class="inner-box">
     <p>
       New hero:
@@ -77,8 +77,22 @@
     <div *ngFor="let hero of (heroes | flyingHeroes)"> {{hero.name}} </div>
   </div>
 </div>
+
 <div class="wrapper-box">
-  <h4>7)弹窗</h4>
+  <h4>7）UI</h4>
+  <div class="inner-div">
+    <span>单选：</span>
+    <mat-radio-group>
+      <mat-radio-button value="1">Option 1</mat-radio-button>
+      <mat-radio-button value="2">Option 2</mat-radio-button>
+    </mat-radio-group>
+    <span style="margin-left:100px;">开关：</span>
+    <mat-slide-toggle style="padding:10px 0 0 10px;">Slide me!</mat-slide-toggle>
+  </div>
+</div>
+
+<div class="wrapper-box">
+  <h4>8）弹窗</h4>
   <div class="inner-box">
     <ol>
       <li>

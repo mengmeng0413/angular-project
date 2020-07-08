@@ -6,11 +6,39 @@ import { RouteTestComponent } from './route-test/route-test.component'
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/test', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
-  { path: 'test', component: TestComponent },
-  { path: 'todo', loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule) },
-  { path: 'routeTest', component: RouteTestComponent }
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: {
+      desc: '首页'
+    }
+  },
+  {
+    path: 'test',
+    component: TestComponent,
+    data:{
+      desc: '特性'
+    }
+  },
+  {
+    path: 'todo',
+    loadChildren: () => import('./todo/todo.module').then(m => m.TodoModule),
+    data:{
+      desc: '表单'
+    }
+  },
+  {
+    path: 'routeTest',
+    component: RouteTestComponent,
+    data:{
+      desc:'练习'
+    }
+  }
 ];
 
 @NgModule({
