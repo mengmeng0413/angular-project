@@ -7,17 +7,13 @@
     <ul>
       <div *ngFor="let item of allRoute ,index as i">
         <li *ngIf="item.path" (click)="routeTo(item)">
-          <i *ngIf="i==1" class="material-icons icons">card_membership</i>
-          <i *ngIf="i==2" class="material-icons icons">card_travel</i>
-          <i *ngIf="i==3" class="material-icons icons">eco</i>
-          <i *ngIf="i==4" class="material-icons icons">face</i>
-          <i *ngIf="i==5" class="material-icons icons">loyalty</i>
+          <i class="material-icons icons">{{item.data.icon}}</i>
           <span class="path">{{item.data.desc}}</span>
         </li>
       </div>
     </ul>
   </mat-drawer>
-  <mat-drawer-content class="content">
+  <mat-drawer-content style="margin-left: 11%;" class="content">
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

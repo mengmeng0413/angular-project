@@ -21,6 +21,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { HomeComponent } from './home/home.component';
+import { MapComponent } from './map/map.component';
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -34,7 +35,8 @@ import { HomeComponent } from './home/home.component';
     ExponentialStrengthPipe,
     FlyingHeroesPipe,
     DialogComponent,
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule, // 提供了运行在浏览器中所需要的关键服务(Service)和指令（Directive)
