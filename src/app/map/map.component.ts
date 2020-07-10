@@ -29,7 +29,8 @@ export class MapComponent implements OnInit, OnDestroy {
     this.map = new AMap.Map('container', {
       viewMode: '2D', // 默认使用 2D 模式，如果希望使用带有俯仰角的 3D 模式，请设置 viewMode: '3D',
       zoom: 13, //初始化地图层级,
-      resizeEnable: true
+      resizeEnable: true,
+      mapStyle:'amap://styles/b6182c02beac9bf34729d1c3e1ad13ca'
     });
     AMap.plugin(['AMap.Geolocation'], function() {
       let geolocation = new AMap.Geolocation({
@@ -47,12 +48,13 @@ export class MapComponent implements OnInit, OnDestroy {
         console.log('定位成功')
       });
     });
+    
     this.map.on('complete', function() {
       let auto = new AMap.AutoComplete({
         input: 'tipInput'
       });
       auto.on('select', function(event) {
-        this.map.setZoomAndCenter(13, event.poi.location);
+        that.map.setZoomAndCenter(13, event.poi.location);
       });
     });
   }
