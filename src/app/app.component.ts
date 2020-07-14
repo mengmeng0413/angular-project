@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit{
   allRoute: Array<any>;
   title: Function;
+  desc = '';
   constructor(
     private router: Router
   ) { }
@@ -18,6 +19,7 @@ export class AppComponent implements OnInit{
    }
   
   routeTo(item: any) {
+    this.desc = item.data.desc
     this.router.navigateByUrl(item.path).then(r => {})
   }
 }

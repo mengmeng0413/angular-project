@@ -6,7 +6,7 @@
     </div>
     <ul>
       <div *ngFor="let item of allRoute ,index as i">
-        <li *ngIf="item.path" (click)="routeTo(item)">
+        <li *ngIf="item.path" (click)="routeTo(item)" [ngClass]="{'active': (item.data.desc===desc)}">
           <i class="material-icons icons">{{item.data.icon}}</i>
           <span class="path">{{item.data.desc}}</span>
         </li>
