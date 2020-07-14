@@ -54,7 +54,7 @@ export class MapComponent implements OnInit, OnDestroy {
         input: 'tipInput'
       });
       auto.on('select', function(event) {
-        that.map.setZoomAndCenter(13, event.poi.location);
+        that.map.setZoomAndCenter(20, event.poi.location);
       });
     });
   }
