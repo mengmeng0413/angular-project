@@ -9,17 +9,30 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit{
   allRoute: Array<any>;
   title: Function;
-  desc = '';
+  local = ''
   constructor(
     private router: Router
   ) { }
 
    ngOnInit(): void {
      this.allRoute = this.router.config
+     this.getLocal()
    }
   
   routeTo(item: any) {
-    this.desc = item.data.desc
-    this.router.navigateByUrl(item.path).then(r => {})
+    this.router.navigateByUrl(item.path).then(r => {
+      if(r){
+        this.getLocal()
+      }
+    })
+  }
+  
+  getLocal(){
+     let reg = /[a-zA-Z]+/
+     let now = window.location.pathname.match(reg)[0]
+     let obj = this.allRoute.find(item => {
+       return item.path === now
+     })
+     this.local = obj.data.desc
   }
 }

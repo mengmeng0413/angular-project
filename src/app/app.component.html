@@ -6,7 +6,7 @@
     </div>
     <ul>
       <div *ngFor="let item of allRoute ,index as i">
-        <li *ngIf="item.path" (click)="routeTo(item)" [ngClass]="{'active': (item.data.desc===desc)}">
+        <li *ngIf="item.path" (click)="routeTo(item)" [ngClass]="{'active': (item.data.desc===local)}">
           <i class="material-icons icons">{{item.data.icon}}</i>
           <span class="path">{{item.data.desc}}</span>
         </li>
@@ -14,6 +14,7 @@
     </ul>
   </mat-drawer>
   <mat-drawer-content style="margin-left: 13%;" class="content">
+<!--    <p class="location">当前位置：{{local}}</p>-->
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
