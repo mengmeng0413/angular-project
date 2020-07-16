@@ -73,4 +73,49 @@ export class RouteTestComponent implements OnInit, OnDestroy {
       this.animal = result;
     });
   }
+  
+  mockInterface() {
+    new Promise((resolve,reject) => {
+      setTimeout(() => {
+        console.log('resolve')
+        resolve()
+      },5000)
+    }).then(r =>{})
+  }
+  
+  fiveSecond(ms){
+    return new Promise(resolve => {
+      setTimeout(resolve,ms)
+    })
+  }
+  
+  async later(val, ms) {
+    await this.fiveSecond(ms)
+    console.log('value--', val)
+  }
+  
+  tryAsync1() {
+    this.later('123', 5000).then((r)=>{})
+  }
+  
+  threeMin() {
+    return new Promise(resolve => {
+      setTimeout(function() {
+        console.log('延时3秒执行')
+        resolve()
+      },3000)
+    })
+  }
+  
+  async threeMinNext() {
+    await this.threeMin()
+    console.log('3秒后执行')
+    return '执行完毕'
+  }
+  
+  tryAsync2(){
+    this.threeMinNext().then(r =>{
+      console.log(r)
+    })
+  }
 }
