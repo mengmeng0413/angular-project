@@ -1,20 +1,29 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer mode="side" class="drawer" opened>
-    <h2>Angular Demo!</h2>
-    <div class="photo-wrapper">
-      <img src="../assets/img/pic2.jpeg" width="100px" height="100px" class="photo">
-    </div>
-    <ul>
-      <div *ngFor="let item of allRoute ,index as i">
-        <li *ngIf="item.path" (click)="routeTo(item)" [ngClass]="{'active': (item.data.desc===local)}">
-          <i class="material-icons icons">{{item.data.icon}}</i>
-          <span class="path">{{item.data.desc}}</span>
-        </li>
+<div class="out-wrapper">
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" class="drawer" opened>
+      <h2>Angular Demo!</h2>
+      <div class="photo-wrapper">
+        <img src="../assets/img/pic2.jpeg" width="100px" height="100px" class="photo">
       </div>
-    </ul>
-  </mat-drawer>
-  <mat-drawer-content style="margin-left: 13%;" class="content">
-<!--    <p class="location">当前位置：{{local}}</p>-->
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
-</mat-drawer-container>
+      <ul>
+        <div *ngFor="let item of allRoute ,index as i">
+          <li *ngIf="item.path" (click)="routeTo(item)" [ngClass]="{'active': (item.data.desc===local)}" [id]="item.path">
+            <i class="material-icons icons">{{item.data.icon}}</i>
+            <span class="path">{{item.data.desc}}</span>
+          </li>
+        </div>
+      </ul>
+    </mat-drawer>
+    <mat-drawer-content style="margin-left: 13%;" class="content">
+  <!--    <p class="location">当前位置：{{local}}</p>-->
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <div class="mask" #mask>
+    <div class="mask-tip">
+      <span #maskDesc class="mask-tip-desc"></span>
+      <button #maskNext class="mask-tip-btn" (click)="nextClick()">下一步</button>
+    </div>
+  </div>
+</div>
+
