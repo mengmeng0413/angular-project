@@ -16,13 +16,13 @@ export class AppComponent implements OnInit{
   allMask = [
     {
       id: 'home',
-      desc: '第一步的说明'
+      desc: '首页'
     },{
       id: 'map',
-      desc: '第二步的说明'
+      desc: '地图'
     },{
       id: 'routeTest',
-      desc: '第三步的说明'
+      desc: 'Angular练习'
     }
   ];
   constructor(
@@ -30,12 +30,16 @@ export class AppComponent implements OnInit{
   ) { }
 
    ngOnInit(): void {
-     localStorage.setItem('isClick', 'false')
+     let isClick = localStorage.getItem('isClick')
      this.allRoute = this.router.config
      this.getLocal()
-     setTimeout(() => {
-       this.getMask(this.allMask)
-     },500)
+     if(isClick && isClick === 'true'){
+       console.log('已点击过')
+     }else{
+       setTimeout(() => {
+         this.getMask(this.allMask)
+       },500)
+     }
    }
    
   getMask(params){
@@ -52,21 +56,17 @@ export class AppComponent implements OnInit{
     let offsetLeft = ele.offsetLeft;
     let offsetTop = ele.offsetTop;
     
-    console.log('该元素的各个距离', offsetWidth, offsetHeight, offsetLeft, offsetTop)
-    
     let scrollWidth = document.body.scrollWidth;
     let scrollHeight =  document.body.scrollHeight;
     
-    console.log('屏幕大小', scrollWidth, scrollHeight);
-    
-    mask.nativeElement.style.width = scrollWidth + 'px';
-    mask.nativeElement.style.height = scrollHeight + 'px';
+    mask.nativeElement.style.width = scrollWidth - 30 + 'px';
+    mask.nativeElement.style.height = scrollHeight + 10 + 'px';
     mask.nativeElement.style.borderColor = "rgba(60, 60, 60, 0.5)";
     mask.nativeElement.style.borderStyle = 'solid';
-    mask.nativeElement.style.borderLeftWidth = offsetLeft - 5 + 'px';
-    mask.nativeElement.style.borderRightWidth = (scrollWidth - offsetWidth - offsetLeft - 5) + 'px';
-    mask.nativeElement.style.borderTopWidth = offsetTop - 5 + 'px';
-    mask.nativeElement.style.borderBottomWidth = (scrollHeight - offsetHeight - offsetTop - 5) + 'px';
+    mask.nativeElement.style.borderLeftWidth = offsetLeft + 10 + 'px';
+    mask.nativeElement.style.borderRightWidth = (scrollWidth - offsetWidth - offsetLeft - 15) + 'px';
+    mask.nativeElement.style.borderTopWidth = offsetTop + 10 + 'px';
+    mask.nativeElement.style.borderBottomWidth = (scrollHeight - offsetHeight - offsetTop + 10) + 'px';
     mask.nativeElement.style.position = 'absolute';
     mask.nativeElement.style.left = 0;
     mask.nativeElement.style.top = 0;
@@ -75,6 +75,7 @@ export class AppComponent implements OnInit{
   }
   
   nextClick(){
+    localStorage.setItem('isClick', 'true')
     this.allMask.shift();
     this.getMask(this.allMask);
   }
