@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { TestComponent } from "./test/test.component";
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
-import { RouteTestComponent } from './route-test/route-test.component'
+import { RouteTestComponent } from './route-test/route-test.component';
+import { AnimationComponent} from './animation/animation.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,14 @@ const routes: Routes = [
     data:{
       desc:'练习',
       icon: 'loyalty'
+    }
+  },
+  {
+    path: 'animation',
+    component: AnimationComponent,
+    data:{
+      desc:'动画',
+      icon: 'card_travel'
     }
   }
 ];
