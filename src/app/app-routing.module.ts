@@ -58,7 +58,7 @@ const routes: Routes = [
     component: AnimationComponent,
     data:{
       desc:'动画',
-      icon: 'card_travel'
+      icon: 'gesture'
     }
   }
 ];
