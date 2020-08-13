@@ -23,6 +23,7 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   mutate = true;
   animal: string;
   name: string;
+  show: false;
   constructor(
     public dialog: MatDialog
   ) {
