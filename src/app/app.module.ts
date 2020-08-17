@@ -23,6 +23,8 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { AnimationComponent } from './animation/animation.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -38,7 +40,8 @@ import { AnimationComponent } from './animation/animation.component';
     DialogComponent,
     HomeComponent,
     MapComponent,
-    AnimationComponent
+    AnimationComponent,
+    FlexLayoutComponent
   ],
   imports: [
     BrowserModule, // 提供了运行在浏览器中所需要的关键服务(Service)和指令（Directive)
@@ -56,7 +59,8 @@ import { AnimationComponent } from './animation/animation.component';
     MatDialogModule,
     MatDatepickerModule,
     // MatButtonModule,
-    // MatCheckboxModule
+    // MatCheckboxModule,
+    FlexLayoutModule
   ],
   exports: [
     // MatButtonModule,

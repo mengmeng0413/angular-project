@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { MapComponent } from './map/map.component';
 import { RouteTestComponent } from './route-test/route-test.component';
 import { AnimationComponent} from './animation/animation.component';
+import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,14 @@ const routes: Routes = [
     data:{
       desc:'动画',
       icon: 'gesture'
+    }
+  },
+  {
+    path: 'flex',
+    component: FlexLayoutComponent,
+    data:{
+      desc:'布局',
+      icon: 'send'
     }
   }
 ];
