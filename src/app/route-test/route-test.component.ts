@@ -24,6 +24,7 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   animal: string;
   name: string;
   show: false;
+  objVal = JSON.stringify({1:{name:1}})
   constructor(
     public dialog: MatDialog
   ) {
