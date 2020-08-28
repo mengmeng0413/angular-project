@@ -25,6 +25,8 @@ import { MapComponent } from './map/map.component';
 import { AnimationComponent } from './animation/animation.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
+import { ExcelComponent } from './excel/excel.component';
+import { MatTableModule } from '@angular/material/table';
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -41,7 +43,8 @@ import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
     HomeComponent,
     MapComponent,
     AnimationComponent,
-    FlexLayoutComponent
+    FlexLayoutComponent,
+    ExcelComponent
   ],
   imports: [
     BrowserModule, // 提供了运行在浏览器中所需要的关键服务(Service)和指令（Directive)
@@ -60,7 +63,8 @@ import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
     MatDatepickerModule,
     // MatButtonModule,
     // MatCheckboxModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTableModule
   ],
   exports: [
     // MatButtonModule,

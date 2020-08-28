@@ -6,6 +6,7 @@ import { MapComponent } from './map/map.component';
 import { RouteTestComponent } from './route-test/route-test.component';
 import { AnimationComponent} from './animation/animation.component';
 import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
+import { ExcelComponent} from './excel/excel.component';
 
 
 const routes: Routes = [
@@ -68,6 +69,14 @@ const routes: Routes = [
     data:{
       desc:'布局',
       icon: 'send'
+    }
+  },
+  {
+    path: 'excel',
+    component: ExcelComponent,
+    data:{
+      desc:'导出',
+      icon: 'eco'
     }
   }
 ];
