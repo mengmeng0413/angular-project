@@ -120,4 +120,10 @@ export class RouteTestComponent implements OnInit, OnDestroy {
       console.log(r)
     })
   }
+  
+  copy1(){
+    let arr = [1,2,3]
+    let newArr = arr.slice();
+    console.log('newArr---', newArr)
+  }
 }
