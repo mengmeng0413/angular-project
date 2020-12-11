@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {HEROES} from "../heroes";
 import { MatDialog } from '@angular/material/dialog';
 import {DialogComponent} from "./component/dialog/dialog.component";
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-route-test',
@@ -125,5 +126,40 @@ export class RouteTestComponent implements OnInit, OnDestroy {
     let arr = [1,2,3]
     let newArr = arr.slice();
     console.log('newArr---', newArr)
+  }
+  
+  subscribe(){
+    const locations = new Observable((observer) => {
+      let watchId: number;
+    
+      if ('geolocation' in navigator) {
+        watchId = navigator.geolocation.watchPosition((position: Position) => {
+          observer.next(position);
+        }, (error: PositionError) => {
+          observer.error(error);
+        });
+      } else {
+        observer.error('Geolocation not available');
+      }
+      
+      return {
+        unsubscribe() {
+          navigator.geolocation.clearWatch(watchId);
+        }
+      };
+    });
+    
+    const locationsSubscription = locations.subscribe({
+      next(position) {
+        console.log('Current Position: ', position);
+      },
+      error(msg) {
+        console.log('Error Getting Location: ', msg);
+      }
+    });
+    
+    setTimeout(() => {
+      locationsSubscription.unsubscribe();
+    }, 10000);
   }
 }
