@@ -153,3 +153,20 @@
     <button class="my-btn" mat-raised-button (click)="subscribe()">发布订阅</button>
   </div>
 </div>
+
+<div class="wrapper-box">
+  <h4>15）可视化JSON-1</h4>
+  <div class="inner-box editor">
+    <json-editor [options]="editorOptions" [data]="data"></json-editor>
+  </div>
+</div>
+
+<div class="wrapper-box">
+  <h4>16）可视化JSON-2</h4>
+  <div class="inner-box">
+    <textarea class="dj" rows="5" cols="10" [innerHTML]="dataJson" [(ngModel)]="dataJson"></textarea>
+    <button class="my-btn"  mat-raised-button (click)="showData()">showData</button>
+  </div>
+</div>
+
+

@@ -1,14 +1,15 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {HEROES} from "../heroes";
 import { MatDialog } from '@angular/material/dialog';
 import {DialogComponent} from "./component/dialog/dialog.component";
+import {JsonEditorComponent, JsonEditorOptions} from 'ang-jsoneditor';
 import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-route-test',
   templateUrl: './route-test.component.html',
   styleUrls: ['./route-test.component.css'],
-   providers: [],
+  providers: [],
 })
 export class RouteTestComponent implements OnInit, OnDestroy {
   values = '';
@@ -25,14 +26,23 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   animal: string;
   name: string;
   show: false;
+  editorOptions: JsonEditorOptions;
+  data: any;
+  dataJson: any;
+  @ViewChild(JsonEditorComponent, {static: false}) editor: JsonEditorComponent;
+  @ViewChild('area') area;
+  
   objVal = JSON.stringify({1:{name:1}})
+  
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
   ) {
     this.reset();
   }
+  
   ngOnInit(): void {
-    console.log('页面初始化')
+    console.log('页面初始化');
+    
   }
   ngOnDestroy(): void {
     console.log('页面销毁')
@@ -48,7 +58,18 @@ export class RouteTestComponent implements OnInit, OnDestroy {
       this.heroes = this.heroes.concat(hero);
     }
   }
-  reset() { this.heroes = HEROES.slice(); }
+  reset() {
+    this.heroes = HEROES.slice();
+    this.editorOptions = new JsonEditorOptions();
+    this.editorOptions.modes = ['code', 'text', 'tree', 'view'];
+    // this.editorOptions.modes = ['text'];
+    this.data = {"products":[{"name":"car","product":[{"name":"honda","model":[{"id":"civic","name":"civic"},{"id":"accord","name":"accord"},{"id":"crv","name":"crv"},{"id":"pilot","name":"pilot"},{"id":"odyssey","name":"odyssey"}]}]}]}
+    this.dataJson = JSON.stringify(this.data, null , 4);
+  }
+  showData(){
+    console.log(JSON.parse(this.dataJson));
+  }
+  
   get format() {
     return this.toggle ? 'shortDate' : 'fullDate';
   }

@@ -21,3 +21,18 @@ input{
 .dialog-ol li{
     margin-left: 50px;
 }
+/*.editor {*/
+/*    width: 800px;*/
+/*    min-height: 500px;*/
+/*}*/
+:host ::ng-deep json-editor,
+:host ::ng-deep json-editor .jsoneditor,
+:host ::ng-deep json-editor > div,
+:host ::ng-deep json-editor jsoneditor-outer {
+  width: 800px;
+  height: 500px;
+}
+.dj{
+  width: 800px;
+  height: 500px;
+}

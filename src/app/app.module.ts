@@ -10,10 +10,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeroComponent } from './hero/hero.component';
 import { MatButtonModule } from "@angular/material/button";
+
 import { RouteTestComponent } from './route-test/route-test.component';
+import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
+import { NgJsonEditorModule } from 'ang-jsoneditor';
+
 import { RouterModule } from "@angular/router";
 import { HighLightDirective } from './highlight.directive';
-import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
 import { DialogComponent } from './route-test/component/dialog/dialog.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -27,6 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
 import { ExcelComponent } from './excel/excel.component';
 import { MatTableModule } from '@angular/material/table';
+
+
 
 // import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
@@ -64,7 +69,8 @@ import { MatTableModule } from '@angular/material/table';
     // MatButtonModule,
     // MatCheckboxModule,
     FlexLayoutModule,
-    MatTableModule
+    MatTableModule,
+    NgJsonEditorModule
   ],
   exports: [
     // MatButtonModule,
