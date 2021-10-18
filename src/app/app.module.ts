@@ -14,6 +14,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { RouteTestComponent } from './route-test/route-test.component';
 import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
 import { NgJsonEditorModule } from 'ang-jsoneditor';
+import { ObjValPipe} from './pipes/objVal.pipe';
+
 
 import { RouterModule } from "@angular/router";
 import { HighLightDirective } from './highlight.directive';
@@ -30,6 +32,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FlexLayoutComponent } from './flex-layout/flex-layout.component';
 import { ExcelComponent } from './excel/excel.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -43,6 +48,7 @@ import { MatTableModule } from '@angular/material/table';
     RouteTestComponent,
     HighLightDirective,
     ExponentialStrengthPipe,
+    ObjValPipe,
     FlyingHeroesPipe,
     DialogComponent,
     HomeComponent,
@@ -70,7 +76,9 @@ import { MatTableModule } from '@angular/material/table';
     // MatCheckboxModule,
     FlexLayoutModule,
     MatTableModule,
-    NgJsonEditorModule
+    NgJsonEditorModule,
+    MatGridListModule,
+    MatSelectModule
   ],
   exports: [
     // MatButtonModule,

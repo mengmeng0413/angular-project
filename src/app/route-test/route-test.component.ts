@@ -29,6 +29,9 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   editorOptions: JsonEditorOptions;
   data: any;
   dataJson: any;
+  tableD: any;
+  tableData: any;
+  
   @ViewChild(JsonEditorComponent, {static: false}) editor: JsonEditorComponent;
   @ViewChild('area') area;
   
@@ -42,8 +45,9 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   
   ngOnInit(): void {
     console.log('页面初始化');
-    
+    this.initData();
   }
+  
   ngOnDestroy(): void {
     console.log('页面销毁')
   }
@@ -58,6 +62,7 @@ export class RouteTestComponent implements OnInit, OnDestroy {
       this.heroes = this.heroes.concat(hero);
     }
   }
+  
   reset() {
     this.heroes = HEROES.slice();
     this.editorOptions = new JsonEditorOptions();
@@ -66,6 +71,7 @@ export class RouteTestComponent implements OnInit, OnDestroy {
     this.data = {"products":[{"name":"car","product":[{"name":"honda","model":[{"id":"civic","name":"civic"},{"id":"accord","name":"accord"},{"id":"crv","name":"crv"},{"id":"pilot","name":"pilot"},{"id":"odyssey","name":"odyssey"}]}]}]}
     this.dataJson = JSON.stringify(this.data, null , 4);
   }
+  
   showData(){
     console.log(JSON.parse(this.dataJson));
   }
@@ -73,15 +79,19 @@ export class RouteTestComponent implements OnInit, OnDestroy {
   get format() {
     return this.toggle ? 'shortDate' : 'fullDate';
   }
+  
   toggleFormat() {
     this.toggle = !this.toggle;
   }
+  
   onClickMe() {
     this.values = ''
   }
+  
   onKey(event: any) {
     this.values += event.target.value + '|'
   }
+  
   update(value: string) {
     this.value = value;
   }
@@ -182,5 +192,58 @@ export class RouteTestComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       locationsSubscription.unsubscribe();
     }, 10000);
+  }
+  
+  initData() {
+    // this.tableData = {
+    //   warning_model_id: {
+    //     N: "7"
+    //   },
+    //   model_name: {
+    //     S: "洪湖模型"
+    //   },
+    //   levels:{
+    //     L: [
+    //       {
+    //         M: {
+    //           level_name_en: {
+    //             S: "normal"
+    //           },
+    //           level_name: {
+    //             S: "正常"
+    //           },
+    //           level_id: {
+    //             N: "0"
+    //           }
+    //         }
+    //       },
+    //       {
+    //         M:{
+    //           level_name_en: {
+    //             S: "blue alert"
+    //           },
+    //           level_name: {
+    //             S: "蓝色预警"
+    //           },
+    //           level_id: {
+    //             N: "1"
+    //           }
+    //         }
+    //       }
+    //     ]
+    //   }
+    // }
+     this.tableD = {
+          alarms: [1,2,3],
+          data_source: {_set_: ["electric_field", "lightning"]},
+          learners: [{features: {}, learner_s3key: "honghu_rf_201807.pkl", learner_name: "p_30m"}],
+          level_basis: "lead_time&ts_intensity",
+          level_criteria: {_set_:[0.4,0.6,0.8]},
+          levels: [{level_name_en: "normal", level_name: "正常", level_id: 0}],
+          model_name: "洪湖输油站预警模型",
+          update_datetime: "2019-07-03T07:17:38.069179+0000",
+          warning_model_id: 7
+        }
+     this.tableData = JSON.stringify(this.tableD, null , 4);
   }
 }

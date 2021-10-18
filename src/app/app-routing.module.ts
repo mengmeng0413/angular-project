@@ -78,6 +78,14 @@ const routes: Routes = [
       desc:'导出',
       icon: 'eco'
     }
+  },
+  {
+    path: 'list',
+    loadChildren: () => import('./list/list.module').then(m => m.ListModule),
+    data:{
+      desc:'列表',
+      icon: 'card_travel'
+    }
   }
 ];
 
