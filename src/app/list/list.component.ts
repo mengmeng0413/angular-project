@@ -11,6 +11,7 @@ export class ListComponent implements OnInit {
   objectKeys = Object.keys;
   str = JSON.stringify;
   tableD: any;
+  dataSource:[]
   ngOnInit(): void {
       this.tableD = {
           alarms: [1,2,3],

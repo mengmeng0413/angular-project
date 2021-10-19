@@ -21,10 +21,15 @@
           </ng-container>
 
           <ng-container *ngIf="!type(tableD[key])">
-              <input fxFlex="10" [value]="key"/>
+            <ng-container >
+                <input fxFlex="10" [value]="key" *ngIf="!tableD[key].length"/>
+<!--              <mat-tree *ngIf="tableD[key].length && tableD[key].length>0" [dataSource]="dataSource">-->
+
+<!--              </mat-tree>-->
+            </ng-container>
               <mat-form-field fxFlex style="text-align: center">
-                <mat-label style="width: 100px">插入字段</mat-label>
-                <mat-select style="width: 100px">
+                <mat-label>插入字段</mat-label>
+                <mat-select>
                   <mat-option value="number">数字</mat-option>
                   <mat-option value="string">字符串</mat-option>
                   <mat-option value="array">数组</mat-option>
