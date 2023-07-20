@@ -1,8 +1,0 @@
-.wrapper-box{
-    margin: 10px;
-    background: #fff;
-    color: #000;
-}
-::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
-    /*width: 10%;*/
-}
