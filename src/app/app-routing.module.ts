@@ -13,8 +13,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     data: {
-      desc: '首页',
-      icon: 'card_membership'
+      desc: '首页'
     }
   },
 ];

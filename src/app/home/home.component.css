@@ -1,8 +1,10 @@
-div{
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  p{
+div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+div p {
     display: inline-block;
     text-align: center;
     font-size: 80px;
@@ -12,9 +14,13 @@ div{
     height: 200px;
     margin: 30px 0 0 20px;
     background-origin: content-box;
-  }
-  @keyframes test{
-    form { background-position: -500px 0; }
-    to { background-position: 500px 0; }
-  }
+}
+
+@keyframes test {
+    form {
+        background-position: -500px 0;
+    }
+    to {
+        background-position: 500px 0;
+    }
 }

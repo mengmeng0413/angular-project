@@ -1,20 +1,45 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Demo01</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <!-- 渲染引导性组件 将结果放入app-root中-->
-  <app-root></app-root>
-</body>
-<script
-    type="text/javascript"
-    src="https://webapi.amap.com/maps?v=2.0&key=f2731f65f22ccb14ce04a2d2c69286c8&plugin=AMap.AutoComplete">
-</script>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="renderer" content="webkit">
+        <title></title>
+        <base href="/">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="apple-touch-icon" type="image/x-icon" href="https://static.leidian.wang/static/images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://fixed.leidian.wang/materialicons/material-icons-20220721.css">
+        <script type="text/javascript" src='//webapi.amap.com/maps?v=2.0&key=00c51fb641a3fcafeeb9c5c9e8975353&plugin=Map3D,AMap.ElasticMarker'></script>
+        <script src="//webapi.amap.com/ui/1.1/main.js?v=1.1.1"></script>
+        <script>
+            var userAgent = navigator.userAgent;
+            var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+             //判断是否IE11以下浏览器
+            var isIE = userAgent.indexOf("Trident") > -1 && !isOpera;
+            window.isIE = isIE;
+            if (isIE) {
+                var reIE = new RegExp("Trident/(\\d+\\.\\d+);");
+                reIE.test(userAgent);
+                var fIEVersion = parseFloat(RegExp["$1"]);
+                if (fIEVersion < 7) {
+                    window.location.href = 'http://' + window.location.host + '/browserupdate/';
+                }
+            }
+        </script>
+        <script>
+            window.SESSION_KEY = "{{ SESSION_KEY }}";
+            window.SOCKET_URL = "{{ SOCKET_URL }}";
+        </script>
+        <script>
+            setTimeout(function(){
+                location.reload()
+                }, 21600000);
+        </script>
+    </head>
+    <body class="{{ THEME }}">
+        <app-root></app-root>
+    </body>
 </html>
-

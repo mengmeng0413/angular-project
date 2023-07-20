@@ -9,14 +9,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from "@angular/material/button";
 
-import { ExponentialStrengthPipe } from './pipes/exponential-strength.pipe';
-import { NgJsonEditorModule } from 'ang-jsoneditor';
-import { ObjValPipe} from './pipes/objVal.pipe';
-
 
 import { RouterModule } from "@angular/router";
 import { HighLightDirective } from './highlight.directive';
-import { FlyingHeroesPipe } from './pipes/flying-heroes.pipe';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
@@ -27,9 +22,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   declarations: [
     AppComponent,
     HighLightDirective,
-    ExponentialStrengthPipe,
-    ObjValPipe,
-    FlyingHeroesPipe,
     HomeComponent
   ],
   imports: [
@@ -46,8 +38,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    FlexLayoutModule,
-    NgJsonEditorModule
+    FlexLayoutModule
   ],
   exports: [],
   providers: [],  // 列出会在此模块中“注入”的服务（Service）

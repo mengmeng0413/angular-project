@@ -1,0 +1,72 @@
+@import '~@angular/material/theming';
+
+// node-sass blue-theme.scss blue-theme.css
+// Your system should installed node-sass first: npm install node-sass -g
+
+$custom-typography: mat-typography-config(
+    $title: mat-typography-level(20px, 32px, 400),
+    $font-family: '"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif'
+);
+
+@include mat-core($custom-typography);
+
+$primary: mat-palette($mat-deep-purple);
+$accent:  mat-palette($mat-amber, A400, A100, A700);
+
+$theme: mat-light-theme($primary, $accent);
+
+$my-accent-palette: (
+        300: #00e5ff,
+        700: #0288d1,
+        900: #01579b,
+        contrast: (
+                300: $dark-primary-text,
+                700: $light-primary-text,
+                900: $light-primary-text,
+        ));
+
+@include angular-material-theme($theme);
+
+.blue-theme {
+    $blue-primary: mat-palette($my-accent-palette, 300, 700, 900);
+    $blue-accent: mat-palette($mat-blue-grey, A400, A100, A700);
+    $blue-warn: mat-palette($mat-deep-orange);
+
+    $my-blue-theme-background: (
+        status-bar: black,
+        app-bar: rgba(26, 52, 92, 1),
+        background: rgba(29, 39, 74, 1),
+        hover: rgba(white, 0.04),
+        card: rgba(26, 52, 92, 1),
+        dialog: rgba(29, 39, 74, 1),
+        disabled-button: rgba(white, 0.12),
+        raised-button: #0e4F8F,
+        focused-button: $light-focused,
+        selected-button: #0e4F8F,
+        selected-disabled-button: map_get($mat-blue, 900),
+        disabled-button-toggle: black,
+        unselected-chip: map_get($mat-blue, 800),
+        disabled-list-option: black,
+    );
+    $blue-theme: (
+        primary: $blue-primary,
+        accent: $blue-accent,
+        warn: $blue-warn,
+        is-dark: true,
+        foreground: $mat-dark-theme-foreground,
+        background: $my-blue-theme-background,
+    );
+
+    @include angular-material-theme($blue-theme);
+
+    .mat-tree-selected {
+        color: mat-color($blue-primary);
+        background: rgba(255,255,255,.12);
+    }
+
+    .basic-chip {
+        background-color: #214788;
+    }
+}
+
+
